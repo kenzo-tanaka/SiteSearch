@@ -1,11 +1,16 @@
+const domains = [
+  'railsguide.jp',
+  'docs.ruby-lang.org/ja',
+  'github.com',
+  'developer.mozilla.org',
+];
+
 chrome.omnibox.onInputChanged.addListener((text, suggest) => {
-  suggest([
-    { content: 'site:railsguide.jp ' + text, description: 'site:railsguide.jp ' }
-  ])
+  const suggestions = domains.map(domain => { return { content: domain + ' ' + text, description: domain } })
+  suggest(suggestions)
 })
 
 chrome.omnibox.onInputEntered.addListener((text) => {
-  const target = 'site:railsguides.jp ' + text
-  const newURL = 'https://www.google.com/search?q=' + encodeURIComponent(target);
+  const newURL = 'https://www.google.com/search?q=' + encodeURIComponent(text);
   chrome.tabs.create({ url: newURL });
 });
