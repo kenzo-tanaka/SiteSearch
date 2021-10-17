@@ -18,7 +18,7 @@ function displayWords() {
 
 displayWords();
 
-document.getElementById('wordSubmit').onclick = function () {
+document.getElementById('domainSubmit').onclick = function () {
   let userWords = document.getElementById('userDomain').value.trim();
   chrome.storage.local.get(['domains'], function (object) {
     let newWords = object.domains || [];
