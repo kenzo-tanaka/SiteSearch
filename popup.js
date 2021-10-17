@@ -26,11 +26,3 @@ const addDomain = () => {
 
 addDomain();
 
-const clearDomains = () => {
-  document.getElementById('clearList').addEventListener('click', () => {
-    chrome.storage.local.clear();
-  })
-};
-
-clearDomains();
-
