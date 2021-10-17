@@ -5,6 +5,11 @@ const displayDomains = () => {
     Object.values(object).map(value => {
       const list = document.createElement('li');
       list.innerHTML = value;
+      const removeBtn = document.createElement('button');
+      removeBtn.innerHTML = 'x'
+      removeBtn.classList
+      list.appendChild(removeBtn);
+
       document.getElementById('displayDomains').appendChild(list);
     })
   });
@@ -24,4 +29,3 @@ const addDomain = () => {
 addDomain();
 
 
-// chrome.storage.local.remove('domains');
