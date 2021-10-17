@@ -3,16 +3,18 @@
 
 <head>
   <title>Add domain</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
-  <h2>Add domain</h2>
-  <ul id='displayDomains'></ul>
-  <form id='domainForm'>
-    <input type='text' name='word' id='userDomain'>
-    <br>
-    <input type='submit' value='Submit' id='domainSubmit'>
-  </form>
+  <div class="domain-manager__wrapper">
+    <h2>Add domain</h2>
+    <ul class="domain-manager__domain-list" id='displayDomains'></ul>
+    <form id='domainForm'>
+      <input type='text' class='domain-manager__domain-input' name='domain' id='userDomain' placeholder='domain'>
+      <input type='submit' class='domain-manager__domain-form-submit' value='Submit' id='domainSubmit'>
+    </form>
+  </div>
 </body>
 <script src='popup.js'></script>
 
