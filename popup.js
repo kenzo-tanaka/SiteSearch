@@ -13,16 +13,24 @@ const displayDomains = () => {
 
 displayDomains();
 
-document.getElementById('domainSubmit').addEventListener('click', () => {
-  const userDomain = document.getElementById('userDomain').value.trim();
-  chrome.storage.local.get(['domains'], (object) => {
-    const newDomain = object.domains || [];
-    newDomain.push(userDomain);
-    chrome.storage.local.set({ domains: newDomain });
+const addDomain = () => {
+  document.getElementById('domainSubmit').addEventListener('click', () => {
+    const userDomain = document.getElementById('userDomain').value.trim();
+    chrome.storage.local.get(['domains'], (object) => {
+      const newDomain = object.domains || [];
+      newDomain.push(userDomain);
+      chrome.storage.local.set({ domains: newDomain });
+    })
   })
-})
+};
 
-document.getElementById('clearList').addEventListener('click', () => {
-  chrome.storage.local.clear();
-})
+addDomain();
+
+const clearDomains = () => {
+  document.getElementById('clearList').addEventListener('click', () => {
+    chrome.storage.local.clear();
+  })
+};
+
+clearDomains();
 
