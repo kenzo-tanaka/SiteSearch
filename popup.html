@@ -3,16 +3,37 @@
 
 <head>
   <title>Add domain</title>
+  <style>
+    .domain-manager__wrapper {
+      width: 300px;
+      padding: 20px;
+    }
+
+    .domain-manager__domain-list li {
+      padding: 3px 0px;
+    }
+
+    .domain-manager__domain-input {
+      width: 70%;
+      display: inline;
+    }
+
+    .domain-manager__domain-form-submit {
+      width: 20%;
+      display: inline;
+    }
+  </style>
 </head>
 
 <body>
-  <h2>Add domain</h2>
-  <ul id='displayDomains'></ul>
-  <form id='domainForm'>
-    <input type='text' name='word' id='userDomain'>
-    <br>
-    <input type='submit' value='Submit' id='domainSubmit'>
-  </form>
+  <div class="domain-manager__wrapper">
+    <h2>Add domain</h2>
+    <ul class="domain-manager__domain-list" id='displayDomains'></ul>
+    <form id='domainForm'>
+      <input type='text' class='domain-manager__domain-input' name='domain' id='userDomain' placeholder='domain'>
+      <input type='submit' class='domain-manager__domain-form-submit' value='Submit' id='domainSubmit'>
+    </form>
+  </div>
 </body>
 <script src='popup.js'></script>
 
