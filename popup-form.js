@@ -4,9 +4,7 @@
 
   form.addEventListener('submit', (event) => {
     const domain = input.value;
-    chrome.storage.sync.set({ domain: domain }, () => {
-      alert('done!');
-    })
+    chrome.storage.local.set({ 'domain': domain })
     event.preventDefault();
   })
 })();
