@@ -1,15 +1,15 @@
-function displayDomains() {
+const displayDomains = () => {
   chrome.storage.local.get(['domains'], (object) => {
-    if (object.domains) {
-      const domains = object.domains;
-      domains.map(domain => {
-        const list = document.createElement('li');
-        list.innerHTML = domain;
-        document.getElementById('displayDomains').appendChild(list);
-      })
-    }
+    if (object.domains === undefined) { return; }
+
+    const domains = object.domains;
+    domains.map(domain => {
+      const list = document.createElement('li');
+      list.innerHTML = domain;
+      document.getElementById('displayDomains').appendChild(list);
+    })
   });
-}
+};
 
 displayDomains();
 
