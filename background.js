@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-  id: 'current-page',
+  id: 'site-search',
   title: 'Site search',
   type: 'normal',
   contexts: ['page'],
