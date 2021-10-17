@@ -18,15 +18,16 @@ function displayWords() {
 
 displayWords();
 
-document.getElementById('domainSubmit').onclick = function () {
+document.getElementById('domainSubmit').addEventListener('click', () => {
   const userWords = document.getElementById('userDomain').value.trim();
   chrome.storage.local.get(['domains'], function (object) {
     const newWords = object.domains || [];
     newWords.push(userWords);
     chrome.storage.local.set({ domains: newWords });
   })
-}
+})
 
-document.getElementById('clearList').onclick = function () {
+document.getElementById('clearList').addEventListener('click', () => {
   chrome.storage.local.clear();
-}
+})
+
