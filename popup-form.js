@@ -3,8 +3,11 @@
   const input = document.getElementById('site-search-domain-input');
 
   form.addEventListener('submit', (event) => {
-    const domain = input.value;
-    chrome.storage.local.set({ 'domain': domain })
+    const value = input.value;
+    const domain = {}
+    domain[value] = value;
+
+    chrome.storage.local.set(domain);
     event.preventDefault();
   })
 })();
