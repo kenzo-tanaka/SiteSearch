@@ -1,10 +1,7 @@
-const domains = [
-  'railsguide.jp',
-  'docs.ruby-lang.org/ja',
-  'github.com',
-  'developer.mozilla.org',
-  'developer.chrome.com/docs/extensions/'
-];
+let domains = [];
+chrome.storage.local.get(['domains'], object => {
+  domains = object.domains;
+})
 
 chrome.omnibox.onInputStarted.addListener(() => {
   chrome.omnibox.setDefaultSuggestion({
