@@ -1,6 +1,14 @@
 {
-  "name": "Search extension with site:",
-  "description": "Easy way to search in site.",
-  "version": "1.0",
-  "manifest_version": 3
+  "name": "Page Redder",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Turns the page red when you click the icon",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
