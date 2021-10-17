@@ -3,11 +3,11 @@ function displayDomains() {
     const pageList = document.getElementById('displayDomains');
     if (object.domains) {
       const domains = object.domains;
-      for (var i = 0; i < domains.length; i++) {
-        const listItem = document.createElement('li');
-        listItem.innerText = domains[i]
-        pageList.appendChild(listItem);
-      }
+      domains.map(domain => {
+        const list = document.createElement('li');
+        list.innerHTML = domain;
+        pageList.appendChild(list);
+      })
     }
   });
 }
