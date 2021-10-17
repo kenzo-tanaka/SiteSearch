@@ -1,6 +1,6 @@
 let domains = [];
-chrome.storage.local.get(['domains'], object => {
-  domains = object.domains;
+chrome.storage.local.get(null, object => {
+  domains = Object.values(object);
 })
 
 chrome.omnibox.onInputStarted.addListener(() => {
