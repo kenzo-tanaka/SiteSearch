@@ -2,14 +2,18 @@
   "name": "Site search",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Site search",
+  "description": "サイト指定の検索を容易にするChrome拡張機能です。",
   "omnibox": {
     "keyword": "ss"
   },
   "permissions": [
     "contextMenus",
-    "tabs"
+    "tabs",
+    "storage"
   ],
+  "browser_action": {
+    "default_popup": "./popup.html"
+  },
   "background": {
     "scripts": [
       "background.js"
