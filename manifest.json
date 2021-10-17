@@ -1,6 +1,13 @@
 {
-  "name": "Search extension with site:",
-  "description": "Easy way to search in site.",
+  "name": "Site search",
   "version": "1.0",
-  "manifest_version": 3
+  "manifest_version": 3,
+  "description": "Site search",
+  "permissions": [
+    "contextMenus",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
