@@ -4,7 +4,7 @@
   "manifest_version": 3,
   "description": "Site search",
   "omnibox": {
-    "keyword": "rails"
+    "keyword": "ss"
   },
   "permissions": [
     "contextMenus",
