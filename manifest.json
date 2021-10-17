@@ -1,7 +1,7 @@
 {
   "name": "Site search",
   "version": "1.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "description": "Site search",
   "omnibox": {
     "keyword": "ss"
@@ -11,6 +11,9 @@
     "tabs"
   ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
   }
 }
