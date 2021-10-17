@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+  <title>Constant Context</title>
+  <style>
+    body {
+      min-width: 300px;
+      font-size: 15px;
+    }
+
+    input {
+      margin: 5px;
+      outline: none;
+    }
+  </style>
+</head>
+
 <body>
-  <form id="site-search-domain-form" action="POST">
-    <input id="site-search-domain-input" type="text">
-    <button>Add domain</button>
+  <h2>Constant Context</h2>
+  <p>Highlights context around words.</p>
+  <ul id="displayWords"></ul>
+  <form id="form">
+    <input type="text" name="word" id="userWords">
+    <br>
+    <input type='submit' value='Submit' id='wordSubmit'>
+    <button id="clearList">Clear</button>
   </form>
-  <script src="popup-form.js"></script>
 </body>
+<script src="popup.js"></script>
 
 </html>
