@@ -13,7 +13,7 @@ chrome.omnibox.onInputStarted.addListener(() => {
 })
 
 chrome.omnibox.onInputChanged.addListener((text, suggest) => {
-  const suggestions = domains.map(domain => { return { content: domain + ' ' + text, description: domain } })
+  const suggestions = domains.map(domain => { return { content: 'site:' + domain + ' ' + text, description: domain } })
   suggest(suggestions)
 })
 
