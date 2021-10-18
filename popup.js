@@ -8,7 +8,10 @@ const displayDomains = () => {
       const removeBtn = document.createElement('button');
       removeBtn.className = 'domain-manager__domain-remove';
       removeBtn.innerText = 'x';
-      removeBtn.classList
+      removeBtn.addEventListener('click', () => {
+        displayDomains();
+      })
+
       list.appendChild(removeBtn);
 
       document.getElementById('displayDomains').appendChild(list);
@@ -28,5 +31,3 @@ const addDomain = () => {
 };
 
 addDomain();
-
-
