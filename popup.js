@@ -1,11 +1,15 @@
 const displayDomains = () => {
-  chrome.storage.local.get(['domains'], (object) => {
-    if (object.domains === undefined) { return; }
+  chrome.storage.local.get(null, (object) => {
+    if (Object.values(object) === []) { return; }
 
-    const domains = object.domains;
-    domains.map(domain => {
+    Object.values(object).map(value => {
       const list = document.createElement('li');
-      list.innerHTML = domain;
+      list.innerHTML = value;
+      const removeBtn = document.createElement('button');
+      removeBtn.innerHTML = 'x'
+      removeBtn.classList
+      list.appendChild(removeBtn);
+
       document.getElementById('displayDomains').appendChild(list);
     })
   });
@@ -16,13 +20,12 @@ displayDomains();
 const addDomain = () => {
   document.getElementById('domainSubmit').addEventListener('click', () => {
     const userDomain = document.getElementById('userDomain').value.trim();
-    chrome.storage.local.get(['domains'], (object) => {
-      const newDomain = object.domains || [];
-      newDomain.push(userDomain);
-      chrome.storage.local.set({ domains: newDomain });
-    })
+    const storeValue = {};
+    storeValue[userDomain] = userDomain;
+    chrome.storage.local.set(storeValue);
   })
 };
 
 addDomain();
+
 
