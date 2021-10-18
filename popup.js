@@ -13,7 +13,6 @@ const displayDomains = () => {
       })
 
       list.appendChild(removeBtn);
-
       document.getElementById('displayDomains').appendChild(list);
     })
   });
