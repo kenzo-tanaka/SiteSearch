@@ -6,7 +6,8 @@ const displayDomains = () => {
       const list = document.createElement('li');
       list.innerHTML = value;
       const removeBtn = document.createElement('button');
-      removeBtn.innerHTML = 'x'
+      removeBtn.className = 'domain-manager__domain-remove';
+      removeBtn.innerText = 'x';
       removeBtn.classList
       list.appendChild(removeBtn);
 

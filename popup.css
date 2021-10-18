@@ -16,3 +16,7 @@
   width: 20%;
   display: inline;
 }
+
+.domain-manager__domain-remove {
+  margin-left: 10px;
+}
