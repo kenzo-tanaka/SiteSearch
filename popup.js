@@ -9,7 +9,7 @@ const displayDomains = () => {
       removeBtn.className = 'domain-manager__domain-remove';
       removeBtn.innerText = 'x';
       removeBtn.addEventListener('click', () => {
-        displayDomains();
+        chrome.storage.local.remove(value);
       })
 
       list.appendChild(removeBtn);
@@ -31,3 +31,4 @@ const addDomain = () => {
 };
 
 addDomain();
+
