@@ -1,11 +1,11 @@
 let domains = [];
-chrome.storage.local.get(null, object => {
-  domains = Object.values(object);
-})
 
 chrome.omnibox.onInputStarted.addListener(() => {
   chrome.omnibox.setDefaultSuggestion({
     description: 'Select domain below.'
+  });
+  chrome.storage.local.get(null, object => {
+    domains = Object.values(object);
   });
 })
 
