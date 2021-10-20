@@ -26,13 +26,17 @@ const createRemoveBtn = (list, value) => {
 
 const inputCurrentDomain = () => {
   const checkbox = document.querySelector('.domain-manager__input-current-domain input');
+  const input = document.querySelector('.domain-manager__domain-input');
+
   checkbox.addEventListener('click', () => {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-      const url = tabs[0].url;
-      const { hostname } = new URL(url);
-
-      const input = document.querySelector('.domain-manager__domain-input');
-      input.value = hostname;
+      if (checkbox.checked) {
+        const url = tabs[0].url;
+        const { hostname } = new URL(url);
+        input.value = hostname;
+      } else {
+        input.value = '';
+      }
     });
   })
 }
