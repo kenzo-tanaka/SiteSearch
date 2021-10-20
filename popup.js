@@ -10,6 +10,7 @@ const displayDomains = () => {
       removeBtn.innerText = 'x';
       removeBtn.addEventListener('click', () => {
         chrome.storage.local.remove(value);
+        list.remove();
       })
 
       list.appendChild(removeBtn);
