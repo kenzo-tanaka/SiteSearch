@@ -5,7 +5,7 @@ const displayDomains = () => {
     Object.values(object).map(value => {
       const list = document.createElement('li');
       list.innerHTML = value;
-      const removeBtn = createRemoveBtn(value);
+      const removeBtn = createRemoveBtn(list, value);
       list.appendChild(removeBtn);
       document.getElementById('displayDomains').appendChild(list);
     })
@@ -14,7 +14,7 @@ const displayDomains = () => {
 
 displayDomains();
 
-const createRemoveBtn = (value) => {
+const createRemoveBtn = (list, value) => {
   const removeBtn = document.createElement('button');
   removeBtn.className = 'domain-manager__domain-remove';
   removeBtn.innerText = 'x';
