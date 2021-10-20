@@ -29,8 +29,11 @@ const inputCurrentDomain = () => {
   const checkWrapper = document.querySelector('.domain-manager__input-current-domain');
   checkWrapper.addEventListener('click', () => {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-      let url = tabs[0].url;
-      alert(url);
+      const url = tabs[0].url;
+      const { hostname } = new URL(url);
+
+      const input = document.querySelector('.domain-manager__domain-input');
+      input.value = hostname;
     });
   })
 }
