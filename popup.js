@@ -23,7 +23,19 @@ const createRemoveBtn = (value) => {
     list.remove();
   })
   return removeBtn;
+};
+
+const inputCurrentDomain = () => {
+  const checkWrapper = document.querySelector('.domain-manager__input-current-domain');
+  checkWrapper.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+      let url = tabs[0].url;
+      alert(url);
+    });
+  })
 }
+
+inputCurrentDomain();
 
 const addDomain = () => {
   document.getElementById('domainSubmit').addEventListener('click', () => {
