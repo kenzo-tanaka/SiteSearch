@@ -5,8 +5,7 @@ const displayDomains = () => {
     Object.values(object).map(value => {
       const list = document.createElement('li');
       list.innerHTML = value;
-      const removeBtn = createRemoveBtn(list, value);
-      list.appendChild(removeBtn);
+      createRemoveBtn(list, value);
       document.getElementById('displayDomains').appendChild(list);
     })
   });
@@ -22,7 +21,7 @@ const createRemoveBtn = (list, value) => {
     chrome.storage.local.remove(value);
     list.remove();
   })
-  return removeBtn;
+  list.appendChild(removeBtn);
 };
 
 const inputCurrentDomain = () => {
