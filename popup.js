@@ -26,8 +26,8 @@ const createRemoveBtn = (value) => {
 };
 
 const inputCurrentDomain = () => {
-  const checkWrapper = document.querySelector('.domain-manager__input-current-domain');
-  checkWrapper.addEventListener('click', () => {
+  const checkbox = document.querySelector('.domain-manager__input-current-domain input');
+  checkbox.addEventListener('click', () => {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
       const url = tabs[0].url;
       const { hostname } = new URL(url);
