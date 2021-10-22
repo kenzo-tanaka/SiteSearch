@@ -1,6 +1,6 @@
 {
-  "name": "Site search",
-  "version": "1.0",
+  "name": "site Search",
+  "version": "0.0.1",
   "manifest_version": 2,
   "description": "サイト指定の検索を容易にするChrome拡張機能です。",
   "omnibox": {
