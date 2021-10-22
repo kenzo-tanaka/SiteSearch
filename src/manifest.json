@@ -1,5 +1,5 @@
 {
-  "name": "site Search",
+  "name": "Site Search",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "サイト指定の検索を容易にするChrome拡張機能です。",
